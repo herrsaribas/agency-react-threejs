@@ -4,10 +4,10 @@ import styled from "styled-components";
 const data = [
   "Web Design",
   "Development",
+  "UI/UX Design",
   "Branding",
   "Social Media",
   "SEO",
-  "Google Ads",
 ];
 
 const Section = styled.div`
@@ -37,7 +37,7 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  font-size: 100px;
+  font-size: 90px;
   font-weight: bold;
   cursor: pointer;
   color: transparent;
