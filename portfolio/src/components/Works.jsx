@@ -1,5 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import Animation from "./Animation";
+import Branding from "./Branding";
+import Development from "./Development";
+import Film from "./Film";
+import Seo from "./Seo";
+import SocialMedia from "./SocialMedia";
+import UiUx from "./UiUx";
+import WebDesign from "./WebDesign";
 
 const data = [
   "Web Design",
@@ -8,6 +16,8 @@ const data = [
   "Branding",
   "Social Media",
   "SEO",
+  "Film/Fotografie",
+  "Animation",
 ];
 
 const Section = styled.div`
@@ -37,11 +47,12 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  font-size: 90px;
+  font-size: 70px;
   font-weight: bold;
   cursor: pointer;
   color: transparent;
   -webkit-text-stroke: 1px white;
+  white-space: nowrap;
   position: relative;
 
   ::after {
@@ -74,19 +85,38 @@ const Right = styled.div`
 `;
 
 export default function Works() {
+  const [work, setWork] = useState("Web Design");
   return (
     <Section>
       <Container>
         <Left>
           <List>
             {data.map((item) => (
-              <ListItem key={item} text={item}>
+              <ListItem key={item} text={item} onClick={() => setWork(item)}>
                 {item}
               </ListItem>
             ))}
           </List>
         </Left>
-        <Right></Right>
+        <Right>
+          {work === "Web Design" ? (
+            <WebDesign />
+          ) : work === "Development" ? (
+            <Development />
+          ) : work === "UI/UX Design" ? (
+            <UiUx />
+          ) : work === "Branding" ? (
+            <Branding />
+          ) : work === "Social Media" ? (
+            <SocialMedia />
+          ) : work === "SEO" ? (
+            <Seo />
+          ) : work === "Film/Fotografie" ? (
+            <Film />
+          ) : (
+            <Animation />
+          )}
+        </Right>
       </Container>
     </Section>
   );
