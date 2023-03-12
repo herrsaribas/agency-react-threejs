@@ -24,6 +24,7 @@ const Left = styled.div`
 `;
 const Title = styled.h1`
   font-size: 74px;
+  line-height: 78px;
 `;
 
 const Right = styled.div`
@@ -57,7 +58,7 @@ const Button = styled.button`
   background-color: #da4ea3;
   color: white;
   font-weight: 500;
-  width: 120px;
+  width: 180px;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -66,7 +67,7 @@ const Button = styled.button`
 
 export default function Who() {
   return (
-    <Section>
+    <Section className="about">
       <Container>
         <Left>
           <Canvas camera={{ fov: 25, position: [5, 5, 5] }}>
@@ -77,16 +78,20 @@ export default function Who() {
           </Canvas>
         </Left>
         <Right>
-          <Title>Think outside the square place.</Title>
+          <Title>
+            H A F E N X. <br /> Ihre Digital Branding Crew.
+          </Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
-            <Subtitle>Who we Are</Subtitle>
+            <Subtitle>Wer sind wir?</Subtitle>
           </WhatWeDo>
           <Desc>
-            a creative group of designers and developers with a passion for the
-            arts.
+            Wir sind diejenigen, die Kunden verstehen und Chancen erkennen. Die
+            Klarheit im Chaos schaffen und mit mutigen Ideen Veränderungen
+            anstoßen. Wir visualisieren Ziele und gehen mit euch die ganze
+            Strecke. Nicht irgendeine Agentur, sondern die Crew an eurer Seite.
           </Desc>
-          <Button>See our works</Button>
+          <Button>Unsere Arbeiten sehen</Button>
         </Right>
       </Container>
     </Section>

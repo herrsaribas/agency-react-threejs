@@ -4,6 +4,8 @@ import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
 import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
 
+import { motion } from "framer-motion";
+
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
@@ -19,6 +21,7 @@ const Container = styled.div`
   width: 1400px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 `;
 
 const Left = styled.div`
@@ -30,6 +33,7 @@ const Left = styled.div`
 `;
 const Title = styled.h1`
   font-size: 74px;
+  line-height: 84px;
 `;
 
 const WhatWeDo = styled.div`
@@ -55,7 +59,7 @@ const Button = styled.button`
   background-color: #da4ea3;
   color: white;
   font-weight: 500;
-  width: 100px;
+  width: 150px;
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -86,21 +90,52 @@ const Img = styled.img`
   }
 `;
 
+const ScrollContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`;
+
+const Scroll = styled.div`
+  width: 20px;
+  height: 40px;
+  border-radius: 24px;
+  border: 4px solid #a9a6c3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+`;
+
+const Motion = styled(motion.div)`
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  margin-bottom: 4px;
+  background-color: #a9a6c3;
+`;
+
 export default function Hero() {
   return (
     <Section>
       <Navbar />
       <Container>
         <Left>
-          <Title>Think. Make. Solve.</Title>
+          <Title>Full Service Agentur für Marketing & Design</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
-            <Subtitle>What we do</Subtitle>
+            <Subtitle>Was wir machen</Subtitle>
           </WhatWeDo>
           <Desc>
-            We enjoy creating delightful, human-centered, digital experiences.
+            Wir entwickeln Webseiten und Onlineshops, die aus Besuchern Kunden
+            machen und bei Google auf Seite 1 stehen.
           </Desc>
-          <Button>Learn More</Button>
+          <Button>Unsere Leistungen</Button>
         </Left>
         <Right>
           <Canvas>
@@ -118,6 +153,21 @@ export default function Hero() {
           </Canvas>
           <Img src="./img/astronout.png" />
         </Right>
+        <ScrollContainer>
+          <a href="#about">
+            <Scroll>
+              <Motion
+                as={motion.div}
+                animate={{ y: [0, 20, 0] }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+              />
+            </Scroll>
+          </a>
+        </ScrollContainer>
       </Container>
     </Section>
   );
