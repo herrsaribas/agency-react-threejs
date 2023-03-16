@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
 import { MeshDistortMaterial, OrbitControls, Sphere } from "@react-three/drei";
+import astronout from "../assets/img/astronout.png";
 
 import { motion } from "framer-motion";
 
@@ -13,6 +14,7 @@ const Section = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  font-family: new-hero, sans-serif;
 `;
 
 const Container = styled.div`
@@ -34,6 +36,7 @@ const Left = styled.div`
 const Title = styled.h1`
   font-size: 74px;
   line-height: 84px;
+  font-family: new-hero, sans-serif;
 `;
 
 const WhatWeDo = styled.div`
@@ -53,6 +56,7 @@ const Subtitle = styled.h2`
 const Desc = styled.p`
   font-size: 24px;
   color: lightgray;
+  font-family: new-hero, sans-serif;
 `;
 
 const Button = styled.button`
@@ -151,7 +155,7 @@ export default function Hero() {
               />
             </Sphere>
           </Canvas>
-          <Img src="./img/astronout.png" />
+          <Img src={astronout} />
         </Right>
         <ScrollContainer>
           <a href="#about">

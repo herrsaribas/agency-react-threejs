@@ -19,7 +19,7 @@ const Map = () => {
     >
       <Geographies
         geography="/features.json"
-        fill="#2E0E57"
+        fill="#151030"
         stroke="#FFFFFF"
         strokeWidth={0.5}
       >
@@ -31,8 +31,8 @@ const Map = () => {
       </Geographies>
 
       <Marker coordinates={[9.0158, 48.4226]}>
-        <text x="196" textAnchor="end" alignmentBaseline="middle" fill="white">
-          {"🇩🇪 We are in Stuttgart 🚀"}
+        <text x="267" textAnchor="end" alignmentBaseline="top" fill="white">
+          {"🇩🇪 Wir sind hier in Böblingen. 🚀"}
         </text>
         <circle r={8} fill="#da4ea2" />
       </Marker>

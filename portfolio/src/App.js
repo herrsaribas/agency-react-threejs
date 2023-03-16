@@ -5,10 +5,12 @@ import Who from "./components/Who";
 import Works from "./components/Works";
 import Contact from "./components/Contact";
 import StarsCanvas from "./components/Stars";
+import Project from "./components/Project";
 
 const Container = styled.div`
   height: 100vh;
-  background: url("./img/bg.jpg");
+  background-color: #050816;
+  /* background: url("./img/bg.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -24,7 +26,7 @@ const Container = styled.div`
   }
 `;
 
-const Part = styled.div`
+const Stars = styled.div`
   position: relative;
   z-index: 0;
 `;
@@ -32,13 +34,14 @@ const Part = styled.div`
 function App() {
   return (
     <Container>
-      <Part>
+      <Stars>
         <Hero />
         <Who />
+        <Works />
+        <Project />
+        <Contact />
         <StarsCanvas />
-      </Part>
-      <Works />
-      <Contact />
+      </Stars>
     </Container>
   );
 }

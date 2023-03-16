@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Animation from "./Animation";
 import Branding from "./Branding";
-import Development from "./Development";
 import Film from "./Film";
 import Seo from "./Seo";
 import SocialMedia from "./SocialMedia";
 import UiUx from "./UiUx";
-import WebDesign from "./WebDesign";
+import web from "../assets/img/webdesign.png";
+import development from "../assets/img/development.png";
 
 const data = [
   "Web Design",
@@ -47,13 +47,14 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  font-size: 70px;
+  font-size: 50px;
   font-weight: bold;
   cursor: pointer;
   color: transparent;
   -webkit-text-stroke: 1px white;
   white-space: nowrap;
   position: relative;
+  font-family: new-hero, sans-serif;
 
   ::after {
     content: "${(props) => props.text}";
@@ -82,6 +83,17 @@ const ListItem = styled.li`
 
 const Right = styled.div`
   flex: 1;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+`;
+
+const WebDesign = styled.img`
+  width: 1000px;
+`;
+
+const Development = styled.img`
+  width: 1000px;
 `;
 
 export default function Works() {
@@ -100,9 +112,9 @@ export default function Works() {
         </Left>
         <Right>
           {work === "Web Design" ? (
-            <WebDesign />
+            <WebDesign src={web} alt="webdesign" />
           ) : work === "Development" ? (
-            <Development />
+            <Development src={development} alt="development" />
           ) : work === "UI/UX Design" ? (
             <UiUx />
           ) : work === "Branding" ? (

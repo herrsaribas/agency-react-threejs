@@ -1,10 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import logo from "../assets/img/logo.png";
+import search from "../assets/img/search.png";
 
 const Section = styled.div`
   display: flex;
   justify-content: center;
   position: fixed;
+  background-color: #050816;
+  width: 100%;
+  z-index: 10;
 `;
 
 const Container = styled.div`
@@ -57,17 +62,17 @@ export default function Navbar() {
     <Section>
       <Container>
         <Links>
-          <Logo src="./img/logo.png" />
+          <Logo src={logo} />
           <List>
             <ListItem>Home</ListItem>
-            <ListItem>Studio</ListItem>
-            <ListItem>Works</ListItem>
-            <ListItem>Contact</ListItem>
+            <ListItem>Kompetenzen</ListItem>
+            <ListItem>Projekte</ListItem>
+            <ListItem>Über uns</ListItem>
           </List>
         </Links>
         <Icons>
-          <Icon src="./img/search.png" />
-          <Button>Hire now</Button>
+          <Icon src={search} />
+          <Button>Kontakt</Button>
         </Icons>
       </Container>
     </Section>
